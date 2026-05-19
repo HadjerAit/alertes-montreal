@@ -1,0 +1,22 @@
+.accueil {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.accueil h1 {
+  margin-bottom: 20px;
+}
+
+.accueil .resultats {
+  margin-bottom: 10px;
+}
+
+.abonner {
+  margin-left: 15px;
+  color: green;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+}

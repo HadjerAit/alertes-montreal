@@ -1,0 +1,24 @@
+.detail {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.detail button {
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.detail h1 {
+  margin-bottom: 10px;
+}
+
+.detail .info {
+  color: #666;
+  margin: 10px 0;
+}
+
+.detail .description {
+  margin-top: 20px;
+  line-height: 1.6;
+}
