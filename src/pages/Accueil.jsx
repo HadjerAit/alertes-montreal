@@ -48,39 +48,42 @@ function Accueil() {
     setFiltreDebut("");
     setFiltreFin("");
   }
+
   if (chargement) return <p>Chargement...</p>;
 
   return (
-    <div className="accueil">
-      <h1>Avis et alertes</h1>
+    <div>
+      <div className="hero">
+        <h1>Avis et alertes</h1>
+        <p>Trouver un avis</p>
+        <BarreRecherche recherche={recherche} setRecherche={setRecherche} />
+      </div>
 
-      <BarreRecherche recherche={recherche} setRecherche={setRecherche} />
+      <div className="accueil">
+        <Filtres
+          arrondissements={listeArr}
+          sujets={listeSujets}
+          filtreArrondissement={filtreArrondissement}
+          setFiltreArrondissement={setFiltreArrondissement}
+          filtreDebut={filtreDebut}
+          setFiltreDebut={setFiltreDebut}
+          filtreFin={filtreFin}
+          setFiltreFin={setFiltreFin}
+          filtreSujet={filtreSujet}
+          setFiltreSujet={setFiltreSujet}
+          reinitialiserFiltres={resetFiltres}
+        />
 
-      <Filtres
-        arrondissements={listeArr}
-        sujets={listeSujets}
-        filtreArrondissement={filtreArrondissement}
-        setFiltreArrondissement={setFiltreArrondissement}
-        filtreDebut={filtreDebut}
-        setFiltreDebut={setFiltreDebut}
-        filtreFin={filtreFin}
-        setFiltreFin={setFiltreFin}
-        filtreSujet={filtreSujet}
-        setFiltreSujet={setFiltreSujet}
-        reinitialiserFiltres={resetFiltres}
-      />
+        <p className="resultats">
+          {resultats.length} résultat(s)
+          <button
+            className="abonner"
+            onClick={() => alert("Abonnement pas disponible.")}
+          >
+            M'abonner →
+          </button>
+        </p>
 
-      <p className="resultats">
-        {resultats.length} résultat(s)
-        <button
-          className="abonner"
-          onClick={() => alert("Abonnement pas disponible.")}
-        >
-          M'abonner →
-        </button>
-      </p>
-
-      <div>
         {resultats.length === 0 ? (
           <p>Aucun résultat.</p>
         ) : (

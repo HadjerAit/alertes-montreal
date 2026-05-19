@@ -5,12 +5,26 @@
   margin-bottom: 15px;
 }
 
-.filtres select,
-.filtres input {
-  padding: 6px;
+.filtres select {
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+  appearance: auto;
 }
 
 .filtres button {
   padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+}
+.filtres input[type="date"] {
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  background-color: white;
   cursor: pointer;
 }

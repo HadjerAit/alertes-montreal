@@ -1,7 +1,7 @@
 .accueil {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 20px 40px;
 }
 
 .accueil h1 {
@@ -19,4 +19,18 @@
   border: none;
   cursor: pointer;
   text-decoration: underline;
+}
+
+.hero {
+  background-color: #f0f0f0;
+  padding: 40px 40px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  margin-bottom: 10px;
+}
+
+.hero p {
+  margin-bottom: 15px;
 }
