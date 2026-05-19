@@ -9,7 +9,7 @@ function CarteAlerte({ alerte }) {
       <h3>{alerte.titre}</h3>
       <span className="sujet">{alerte.sujet}</span>
       <p className="info">
-        📅 {alerte.dateEmission} &nbsp; 🕐 {alerte.heure}
+        {alerte.dateEmission} &nbsp; {alerte.heure}
       </p>
     </div>
   );
