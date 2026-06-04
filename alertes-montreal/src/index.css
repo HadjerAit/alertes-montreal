@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: white;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  select,
+  input[type="date"],
+  input[type="text"] {
+    width: 100%;
+  }
+
+  header button {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+
+  header {
+    padding: 8px 10px;
+  }
+}

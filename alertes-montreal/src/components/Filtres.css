@@ -1,0 +1,56 @@
+.filtres {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.filtres select {
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+  appearance: auto;
+}
+
+.filtres button {
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+}
+.filtres input[type="date"] {
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+}
+.chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.chip {
+  background-color: #e0e0e0;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.chip button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 0;
+  border-radius: 0;
+  width: auto;
+}
