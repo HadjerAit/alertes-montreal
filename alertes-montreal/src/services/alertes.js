@@ -5,11 +5,14 @@ const URL_API = `https://donnees.montreal.ca/api/3/action/datastore_search?resou
 function normaliser(alerte) {
   const dateDebut = alerte.date_debut ? alerte.date_debut.split('T') : ['', '']
 
+
+  const match = alerte.titre.match(/arrondissement\s+([A-Za-zÀ-ÿ\- ]+)/i)
+  const arrondissement = match ? match[1].trim() : 'Non spécifié'
+
   return {
     id: alerte._id.toString(),
     titre: alerte.titre || 'Sans titre',
-
-    arrondissement: alerte.service_publieur || 'Non spécifié',
+    arrondissement,
     sujet: alerte.type || 'Autre',
     dateEmission: dateDebut[0],
     heure: dateDebut[1] ? dateDebut[1].slice(0, 5) : '',
@@ -18,10 +21,14 @@ function normaliser(alerte) {
   }
 }
 
+
 export async function getAlertes() {
   const response = await fetch(URL_API)
   if (!response.ok) throw new Error('Erreur API')
   const data = await response.json()
+  //console.log(data.result.records[0]);
+
+  console.log(data.result.records[0]);
 
   return data.result.records.map(normaliser)
 }
