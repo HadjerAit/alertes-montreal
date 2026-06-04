@@ -26,7 +26,7 @@ export async function getAlertes() {
   const response = await fetch(URL_API)
   if (!response.ok) throw new Error('Erreur API')
   const data = await response.json()
-  //console.log(data.result.records[0]);
+
 
   console.log(data.result.records[0]);
 
