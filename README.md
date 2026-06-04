@@ -25,3 +25,14 @@ Ensuite ouvrir http://localhost:5173
 - **react-router-dom** : j'en avais besoin pour faire la navigation entre la page d'accueil et la page de détail sans recharger la page
 - **CSS vanilla** : j'ai utilisé des fichiers CSS séparés pour chaque composant pour garder le code organisé
 - **src/services/alertes.js** : j'ai mis les données dans un fichier séparé pour que les composants n'aient pas à savoir d'où viennent les données, ce qui va faciliter la connexion à une vraie API au projet 2
+
+## Scores Lighthouse
+
+- Performance : 97
+- Best Practices : 100
+- SEO : 83
+
+## Stratégie de mise en cache
+
+- Assets statiques (JS, CSS, images) → précachés au premier chargement
+- Données de l'API → StaleWhileRevalidate (affiche les données en cache pendant qu'il récupère les nouvelles)

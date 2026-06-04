@@ -6,6 +6,7 @@ import Detail from "./pages/Detail";
 function App() {
   return (
     <BrowserRouter>
+      {" "}
       <Header />
       <Routes>
         <Route path="/" element={<Accueil />} />

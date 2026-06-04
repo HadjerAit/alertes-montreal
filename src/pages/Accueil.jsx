@@ -9,16 +9,23 @@ function Accueil() {
   const [alertes, setAlertes] = useState([]);
   const [chargement, setChargement] = useState(true);
   const [recherche, setRecherche] = useState("");
-  const [filtreArrondissement, setFiltreArrondissement] = useState("");
-  const [filtreSujet, setFiltreSujet] = useState("");
+  const [filtreArrondissement, setFiltreArrondissement] = useState([]);
+  const [filtreSujet, setFiltreSujet] = useState([]);
   const [filtreDebut, setFiltreDebut] = useState("");
   const [filtreFin, setFiltreFin] = useState("");
 
+  const [erreur, setErreur] = useState(null);
+
   useEffect(() => {
-    getAlertes().then((data) => {
-      setAlertes(data);
-      setChargement(false);
-    });
+    getAlertes()
+      .then((data) => {
+        setAlertes(data);
+        setChargement(false);
+      })
+      .catch((err) => {
+        setErreur("Impossible de charger les alertes.");
+        setChargement(false);
+      });
   }, []);
 
   const listeArr = [...new Set(alertes.map((a) => a.arrondissement))];
@@ -33,9 +40,10 @@ function Accueil() {
       enleverAccents(recherche.toLowerCase()),
     );
     const okArr =
-      filtreArrondissement === "" ||
-      alerte.arrondissement === filtreArrondissement;
-    const okSujet = filtreSujet === "" || alerte.sujet === filtreSujet;
+      filtreArrondissement.length === 0 ||
+      filtreArrondissement.includes(alerte.arrondissement);
+    const okSujet =
+      filtreSujet.length === 0 || filtreSujet.includes(alerte.sujet);
     const okDebut = filtreDebut === "" || alerte.dateEmission >= filtreDebut;
     const okFin = filtreFin === "" || alerte.dateEmission <= filtreFin;
     return okRecherche && okArr && okSujet && okDebut && okFin;
@@ -43,14 +51,14 @@ function Accueil() {
 
   function resetFiltres() {
     setRecherche("");
-    setFiltreArrondissement("");
-    setFiltreSujet("");
+    setFiltreArrondissement([]);
+    setFiltreSujet([]);
     setFiltreDebut("");
     setFiltreFin("");
   }
 
   if (chargement) return <p>Chargement...</p>;
-
+  if (erreur) return <p style={{ padding: "20px", color: "red" }}>{erreur}</p>;
   return (
     <div>
       <div className="hero">
