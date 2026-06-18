@@ -1,0 +1,76 @@
+.accueil {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 40px;
+}
+
+.accueil h1 {
+  margin-bottom: 20px;
+}
+
+.accueil .resultats {
+  margin-bottom: 10px;
+}
+
+.abonner {
+  margin-left: 15px;
+  color: green;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.hero {
+  background-color: #f0f0f0;
+  padding: 40px 40px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  margin-bottom: 10px;
+}
+
+.hero p {
+  margin-bottom: 15px;
+}
+
+.banniere-hors-ligne {
+  background-color: #f5a623;
+  color: white;
+  text-align: center;
+  padding: 8px;
+  font-size: 14px;
+}
+
+.message-chargement {
+  padding: 20px;
+  color: #666;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin: 30px 0;
+}
+
+.pagination button {
+  padding: 8px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.pagination button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.page-active {
+  background-color: #333 !important;
+  color: white;
+  border-color: #333 !important;
+}
